@@ -1,0 +1,3 @@
+1. One of the security volurabilities I am seeing is that Web Service Instance is in Public subnet. I would separate WebServer and the web logic into two different servers. Web Server should sit in Public subnet and Web Service should sit in Private Subnet. This way the application logic can be safe and secure.
+2. Looking at c3-s3.jml file I am noticing that S3 buckets are not encrypted. Especially the secret recipe S3 bucket needs to be encrypted. Some AWS accounts may have policies to force S3 encryption but we can't assume that.
+3. InstanceRolePolicy-C3 (inside of c3-app.yml file) is not restrictive. You can find it allows all s3 actions. I would restrict this policy to allow only specific actions. For example, it should not allow delete as this can be missused.  
