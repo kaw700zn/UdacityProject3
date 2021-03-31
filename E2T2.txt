@@ -1,0 +1,7 @@
+The scans have shown various vulnerabilities.
+AWS Config:
+    It shows that S3 bucket server side encryption is not enabled. For S3 it also shows non compliance with allowing SSL request only. It also recommends for the bucket to have logging enabled. All three of these issues are easily fixable. Using AWS console, I am able to make these changes. These setting could have been done via CloudFormation as well.
+AWS Inspector:
+    It shows that application instance is configured to be accessible via password authentication over SSH. This can be attacked via brute force attack. We should be using key-based authentication instead.
+Security Hub:
+    With security hub, I was able to find that on webApp security group is allowing ingress from 0.0.0.0/0 to port 22. According to Security Hub, It is recommended that no security group allows unrestricted ingress access to port 22. Port 22 allows TCP traffic. This issue is easily remediated by whitelisting only specific IPs. 
