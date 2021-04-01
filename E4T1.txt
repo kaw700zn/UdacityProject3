@@ -1,0 +1,9 @@
+Remediation plan
+Securing SSH
+    1. To remediate the brute force attacks we can change security groups settings. We can whitelist only the IPs that are trusted. Either company IPs or even personal IPs.
+    2. We can remove/disable SSH password login at the server level
+    3. We can have all of servers hidden within our VPN and disable all paths to the server except the public HTTP.
+Securing S3
+    1. To prevent S3 breach we could have done server side encryption with encryption keys being accessible only by key owners.
+    2. There is no need for secret recipes to be publicly available. This would not help us if the API credentials were compromised.
+    3. We can change the access control list (ACL) for the bucket. That way only certain requestors can have the bucket permissions.
