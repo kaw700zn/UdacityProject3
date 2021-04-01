@@ -1,0 +1,8 @@
+A. Scan infrastructure as code templates:
+    Regula. Regula allows scanning of different infrastructure as code templates. Whether it is terraform or CloudFormation. The example of issue it can find is IAM policy that has admin access.
+    
+B. Scan AMI’s or containers for OS vulnerabilities
+    AWS inspector. AWS inspector is intended to specifically analyze and report on vulnerabilities on EC2 instances. The example of the issue it can find is allowing SSH password login.
+    
+C. Scan an AWS environment for cloud configuration vulnerabilities.
+    AWS Config. AWS Config collects configuration snapshots of many AWS resources. You can setup the rules to watch for specific issue. The example of AWS Config is watching S3 bucket for mandated encryption. If the S3 bucket is attempted to be setup without the encryption. AWS Config will alert us of the violation of the rule.
